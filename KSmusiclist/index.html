@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIVEWIRE | 空嗓的歌单</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LIVEWIRE 开屏动画 -->
+<div id="intro-screen" class="intro-screen">
+  <div class="intro-noise"></div>
+  <div class="intro-content">
+
+    <p class="intro-status">
+      <span class="intro-light"></span>
+      LIVEWIRE // SYSTEM BOOT
+    </p>
+
+    <div class="intro-logo">LIVEWIRE</div>
+
+    <div class="intro-wave" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i>
+      <i></i>
+    </div>
+
+    <p class="intro-message" id="intro-message">
+      ESTABLISHING CONNECTION...
+    </p>
+
+    <div class="intro-progress">
+      <div class="intro-progress-bar" id="intro-progress-bar"></div>
+    </div>
+
+    <p class="intro-footer">A NEW SIGNAL IS COMING</p>
+
+  </div>
+
+  <button id="intro-skip" class="intro-skip" type="button">
+    SKIP INTRO ↗
+  </button>
+</div>
+<!-- LIVEWIRE 开屏动画结束 -->
+    
+<!-- LIVEWIRE 动态舞台背景 -->
+<video
+  class="stage-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  aria-hidden="true"
+>
+  <source src="assets/动态舞台效果.mp4" type="video/mp4">
+</video>
+
+
+  <!-- 顶部导航 -->
+  <header class="navbar">
+    <a class="brand" href="#">〽 LIVEWIRE</a>
+    <nav>
+      <a href="#home">首页</a>
+      <a href="#playlist">完整歌单</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 首页主视觉 -->
+    <section class="hero" id="home">
+
+      <!-- 左侧：主播信息 -->
+      <div class="profile">
+        <img
+          class="avatar"
+          src="assets/avatar.jpg"
+          alt="给我个图"
+        >
+
+        
+<div class="name-with-signal">
+  <h1>空嗓</h1>
+  <span class="radio-wave" aria-label="电波信号">
+    <i></i>
+    <i></i>
+    <i></i>
+  </span>
+</div>
+
+
+        <p class="slogan">
+          说别人不敢说的，做别人不敢做的。
+        </p>
+
+        <p class="subtitle">HARD ROCK · LIVE SESSION</p>
+      </div>
+
+      <!-- 右侧：推荐曲目 -->
+      <div class="recommendations">
+        <div class="section-heading">
+          
+<div class="heading-title">
+  <h2>精选推荐</h2>
+  <div class="signal-meter" aria-label="音频信号装饰">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+          <button id="shuffle-btn" type="button">换一批 ↻</button>
+        </div>
+
+        <div class="featured-tracks" id="featured-tracks">
+          <!-- 推荐曲目由 JavaScript 自动生成 -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 完整歌单 -->
+    <section class="playlist" id="playlist">
+      <h2>完整歌单</h2>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="搜索歌名或歌手..."
+      >
+
+      <div class="categories" id="categories">
+        <!-- 分类按钮由 JavaScript 自动生成 -->
+      </div>
+
+      <div class="song-list" id="song-list">
+        <!-- 歌曲列表由 JavaScript 自动生成 -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>LIVEWIRE</span>
+    <p>FEEL THE VOLTAGE.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

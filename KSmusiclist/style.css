@@ -1,0 +1,1734 @@
+
+/* LIVEWIRE 基础视觉系统 */
+:root {
+  --bg: #111214;
+  --panel: #1b1d21;
+  --red: #e34840;
+  --white: #f2f0eb;
+  --gray: #92959b;
+  --line: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+/* 顶部导航 */
+.navbar {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar nav a {
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+  color: var(--red);
+}
+
+/* 首页主视觉 */
+.hero {
+  min-height: 560px;
+  padding: 70px 7%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 75% 40%,
+      rgba(227, 72, 64, 0.14), transparent 45%),
+    linear-gradient(120deg, #15171b, #22252c 60%, #171719);
+}
+
+/* 轻微舞台光效 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 35%,
+      rgba(255,255,255,0.045) 48%,
+      transparent 60%);
+}
+
+.profile,
+.recommendations {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--red);
+  display: block;
+  margin-bottom: 18px;
+  background: var(--panel);
+}
+
+.profile h1 {
+  font-size: 30px;
+  margin: 0 0 14px;
+}
+
+.slogan {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.subtitle {
+  color: var(--gray);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 24px;
+}
+
+/* 推荐歌曲 */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+#shuffle-btn {
+  color: var(--white);
+  border: 1px solid var(--red);
+  background: transparent;
+  border-radius: 30px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+#shuffle-btn:hover {
+  background: var(--red);
+}
+
+
+.featured-tracks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+
+/* 完整歌单 */
+.playlist {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 90px;
+}
+
+.playlist h2 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+#search {
+  width: 100%;
+  max-width: 480px;
+  padding: 13px 16px;
+  margin: 12px 0 20px;
+  color: var(--white);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  outline: none;
+}
+
+#search:focus {
+  border-color: var(--red);
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.song-list {
+  border-top: 1px solid var(--line);
+}
+
+footer {
+  padding: 28px 6%;
+  border-top: 1px solid var(--line);
+  color: var(--gray);
+  letter-spacing: 2px;
+}
+
+/* 手机端适配 */
+@media (max-width: 600px) {
+  .navbar {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .navbar nav {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 42px 20px;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .profile h1 {
+    font-size: 26px;
+  }
+
+  .slogan {
+    font-size: 15px;
+  }
+
+  
+.featured-tracks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0;
+}
+
+.featured-tracks .track-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  transform: none;
+}
+
+.featured-tracks .track-card:hover {
+  transform: none;
+}
+
+
+  .playlist {
+    padding: 42px 20px 60px;
+  }
+
+  .playlist h2 {
+    font-size: 26px;
+  }
+
+  .categories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+}
+
+/* 精选歌曲卡片 */
+
+/* LIVEWIRE：工业风歌曲卡片 */
+.track-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(43, 44, 49, 0.97),
+      rgba(25, 26, 30, 0.98)
+    );
+
+  border: 1px solid #414147;
+  border-radius: 12px;
+  padding: 20px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 8px 22px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* 左侧红色警示灯条 */
+.track-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    #ff554d,
+    #9d2927 70%,
+    #4c2021
+  );
+
+  transition: width 0.25s ease;
+}
+
+/* 卡片顶部的微弱金属反光 */
+.track-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.045),
+    transparent 32%
+  );
+
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+/* 鼠标悬停：轻微抬起，红色边缘增强 */
+.track-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232, 70, 63, 0.65);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(190, 42, 38, 0.08);
+}
+
+.track-card:hover::before {
+  width: 5px;
+}
+
+.track-card:hover::after {
+  opacity: 1;
+}
+
+/* 尊重系统的减少动态效果设置 */
+@media (prefers-reduced-motion: reduce) {
+  .track-card,
+  .track-card::before,
+  .track-card::after {
+    transition: none;
+  }
+
+  .track-card:hover {
+    transform: none;
+  }
+}
+
+
+.track-card h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+}
+
+.track-card p {
+  color: #b7b8be;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.track-card .track-tags {
+  color: #e87972;
+  font-size: 12px;
+}
+
+.track-card button {
+  padding: 8px 14px;
+  color: #f2f0eb;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.track-card button:hover {
+  background: #e34840;
+  border-color: #e34840;
+}
+
+.track-card:nth-child(2) {
+  transform: translateY(18px);
+}
+
+.track-card:nth-child(4) {
+  transform: translateY(10px);
+}
+
+@media (max-width: 600px) {
+  .track-card:nth-child(2),
+  .track-card:nth-child(4) {
+    transform: none;
+  }
+}
+
+/* 完整歌单行 */
+.song-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 12px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s, padding 0.2s;
+}
+
+.song-row:hover {
+  background: rgba(227, 72, 64, 0.06);
+  padding-left: 18px;
+}
+
+.song-number {
+  color: var(--red);
+  font-size: 12px;
+  min-width: 30px;
+  font-variant-numeric: tabular-nums;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.song-info strong {
+  font-size: 15px;
+}
+
+.song-info span {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.category-btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  color: var(--gray);
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  color: var(--white);
+  border-color: var(--red);
+  background: rgba(227, 72, 64, 0.12);
+}
+.song-info strong {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.song-info strong:hover {
+  color: var(--red);
+}
+
+/* LIVEWIRE：动态舞台氛围 */
+
+/* LIVEWIRE：动态舞台氛围 */
+.hero {
+  isolation: isolate;
+  position: relative;
+}
+
+/* 红色聚光：集中在推荐歌曲区域 */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -120px;
+  right: -40px;
+  width: 620px;
+  height: 560px;
+  pointer-events: none;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(190, 42, 38, 0.20) 0%,
+    rgba(150, 32, 30, 0.10) 38%,
+    transparent 72%
+  );
+
+  filter: blur(45px);
+  animation: stageGlow 12s ease-in-out infinite alternate;
+}
+
+/* 灰白色烟雾与斜向舞台光束 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(155, 165, 180, 0.07),
+      transparent 55%
+    ),
+    linear-gradient(
+      115deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.035) 48%,
+      transparent 60%
+    );
+
+  background-size: 100% 100%, 200% 100%;
+  background-position: center, 0% 50%;
+  animation: stageMist 18s ease-in-out infinite alternate;
+}
+
+@keyframes stageGlow {
+  from {
+    transform: translate(-15px, 0) scale(0.92);
+    opacity: 0.65;
+  }
+
+  to {
+    transform: translate(20px, 30px) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes stageMist {
+  from {
+    background-position: center, 0% 50%;
+  }
+
+  to {
+    background-position: center, 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after {
+    animation: none;
+  }
+}
+
+
+/* LIVEWIRE：歌曲信息视觉强化 */
+
+/* 歌曲标题 */
+.track-card h3 {
+  color: #f0efec;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease;
+}
+
+.track-card:hover h3 {
+  color: #ffffff;
+}
+
+/* 歌手名称 */
+.track-card p {
+  color: #a9a9b0;
+}
+
+/* 歌曲标签：低调的警示红 */
+.track-card .song-tags,
+.track-card .tags {
+  color: #ed716b;
+}
+
+/* 复制按钮：工业控制按钮 */
+.track-card button {
+  background: rgba(255, 255, 255, 0.015);
+  color: #d8d7d5;
+  border: 1px solid #55545b;
+  border-radius: 5px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.track-card button:hover {
+  background: rgba(205, 55, 49, 0.12);
+  border-color: #d94a44;
+  color: #ffffff;
+}
+
+.track-card button:active {
+  background: rgba(205, 55, 49, 0.24);
+}
+
+/* LIVEWIRE：音频信号刻度 */
+.heading-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.signal-meter {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+  opacity: 0.85;
+}
+
+.signal-meter span {
+  display: block;
+  width: 3px;
+  height: 6px;
+  border-radius: 1px;
+  background: #d94a44;
+  transform-origin: center;
+  animation: signalPulse 0.85s ease-in-out infinite alternate;
+}
+
+/* 不同高度与节奏，模拟真实电平 */
+.signal-meter span:nth-child(1) {
+  animation-delay: -0.2s;
+}
+
+.signal-meter span:nth-child(2) {
+  height: 13px;
+  animation-delay: -0.6s;
+}
+
+.signal-meter span:nth-child(3) {
+  height: 19px;
+  animation-delay: -0.35s;
+}
+
+.signal-meter span:nth-child(4) {
+  height: 10px;
+  animation-delay: -0.7s;
+}
+
+.signal-meter span:nth-child(5) {
+  height: 17px;
+  animation-delay: -0.1s;
+}
+
+.signal-meter span:nth-child(6) {
+  height: 8px;
+  animation-delay: -0.5s;
+}
+
+.signal-meter span:nth-child(7) {
+  height: 14px;
+  animation-delay: -0.3s;
+}
+
+@keyframes signalPulse {
+  from {
+    transform: scaleY(0.45);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-meter span {
+    animation: none;
+  }
+}
+
+/* LIVEWIRE：机械式换歌按钮 */
+#shuffle-btn {
+  position: relative;
+  overflow: hidden;
+
+  padding: 10px 17px;
+  color: #e7e5e2;
+  background: linear-gradient(
+    180deg,
+    #303035 0%,
+    #222226 100%
+  );
+
+  border: 1px solid #555158;
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.4px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 3px 0 #141416;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.15s ease;
+}
+
+/* 按钮表面掠过一层微弱红光 */
+#shuffle-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(230, 70, 63, 0.15) 50%,
+    transparent 80%
+  );
+
+  transform: translateX(-120%);
+  transition: transform 0.35s ease;
+}
+
+#shuffle-btn:hover {
+  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #3a2a2b 0%,
+    #292224 100%
+  );
+
+  border-color: #d94a44;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 3px 0 #141416,
+    0 0 12px rgba(217, 74, 68, 0.12);
+}
+
+#shuffle-btn:hover::before {
+  transform: translateX(120%);
+}
+
+#shuffle-btn:active {
+  transform: translateY(2px);
+
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 0 #141416;
+}
+
+#shuffle-btn:focus-visible {
+  outline: 2px solid #e45b55;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #shuffle-btn,
+  #shuffle-btn::before {
+    transition: none;
+  }
+}
+
+/* LIVEWIRE：手机端紧凑推荐布局 */
+@media (max-width: 768px) {
+  .featured-tracks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .featured-tracks .track-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 12px 12px 13px;
+    border-radius: 10px;
+  }
+
+  .featured-tracks .track-card h3 {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .featured-tracks .track-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .featured-tracks .track-card button {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .featured-tracks .track-card:hover {
+    transform: none;
+  }
+}
+
+/* LIVEWIRE：手机端超紧凑歌曲卡片 */
+@media (max-width: 768px) {
+  .featured-tracks {
+    gap: 7px;
+  }
+
+  .featured-tracks .track-card {
+    padding: 9px 10px;
+    border-radius: 8px;
+  }
+
+  .featured-tracks .track-card h3 {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .featured-tracks .track-card p {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .featured-tracks .track-card button {
+    padding: 5px 8px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+}
+
+/* LIVEWIRE：空嗓 · 先锋故障字标 */
+.profile h1 {
+  display: inline-block;
+  position: relative;
+
+  color: #f2f0ed;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 2px;
+
+  transform: skewX(-6deg);
+  text-shadow:
+    2px 0 rgba(235, 65, 60, 0.75),
+    -2px 0 rgba(70, 180, 255, 0.55);
+
+  animation: vocalGlitch 5s infinite;
+}
+
+/* 红蓝色散与像素切片 */
+
+/* LIVEWIRE：空嗓 · 透明色散字标 */
+.profile h1 {
+  display: inline-block;
+  position: relative;
+
+  color: #f5f3f0;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 2px;
+
+  transform: skewX(-6deg);
+
+  /* 更鲜艳但轻盈的光学色差 */
+  text-shadow:
+    -1px 0 rgba(0, 220, 255, 0.72),
+    1px 0 rgba(255, 40, 100, 0.72),
+    0 0 8px rgba(255, 255, 255, 0.12);
+
+  animation: vocalGlitch 6s infinite;
+}
+
+
+/* LIVEWIRE：空嗓 · 轻盈色散字标 */
+
+/* LIVEWIRE：空嗓 · 极简红色字标 */
+.profile h1 {
+  display: inline-block;
+  position: relative;
+
+  color: #ef514b;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2px;
+  line-height: 1.3;
+
+  transform: skewX(-5deg);
+
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 5px rgba(255, 255, 255, 0.22),
+    0 0 12px rgba(239, 81, 75, 0.16);
+}
+
+/* 关闭之前的色散图层 */
+.profile h1::before,
+.profile h1::after {
+  content: none;
+}
+
+/* 主播名字与电波符号 */
+.name-with-signal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.name-with-signal .profile h1 {
+  margin: 0;
+}
+
+.name-with-signal h1 {
+  margin: 0;
+}
+
+.radio-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 24px;
+  transform: skewX(-8deg);
+}
+
+.radio-wave i {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: #ef514b;
+  box-shadow: 0 0 5px rgba(239, 81, 75, 0.35);
+}
+
+.radio-wave i:nth-child(1) {
+  height: 8px;
+}
+
+.radio-wave i:nth-child(2) {
+  height: 18px;
+}
+
+.radio-wave i:nth-child(3) {
+  height: 12px;
+}
+
+/* LIVEWIRE：动态舞台视频背景 */
+.stage-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* 视频上的暗色遮罩，确保文字清晰 */
+body {
+  position: relative;
+  background: #111215;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12, 13, 16, 0.55) 0%,
+      rgba(12, 13, 16, 0.35) 45%,
+      rgba(12, 13, 16, 0.78) 100%
+    );
+}
+
+/* 页面内容保持在背景上方 */
+body > *:not(.stage-video) {
+  position: relative;
+  z-index: 1;
+}
+
+/* 手机端避免视频背景过亮 */
+@media (max-width: 768px) {
+  body::after {
+    background: rgba(12, 13, 16, 0.58);
+  }
+}
+
+/* 减少动态效果时隐藏视频 */
+@media (prefers-reduced-motion: reduce) {
+  .stage-video {
+    display: none;
+  }
+}
+
+/* 修复：首页背景遮挡动态舞台视频 */
+.hero {
+  background-color: transparent !important;
+  background-image: none;
+}
+
+/* 首页内容层保持透明，让视频透出来 */
+.profile,
+.recommendations {
+  background-color: transparent;
+}
+
+/* LIVEWIRE：半透明工业风歌曲卡片 */
+.featured-tracks .track-card {
+  background: rgba(18, 19, 23, 0.76);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-color: rgba(110, 110, 120, 0.42);
+}
+
+/* LIVEWIRE：红色换歌按钮 */
+#shuffle-btn {
+  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #d93636 0%,
+    #991f25 100%
+  );
+
+  border: 1px solid #f05a55;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 3px 0 #521519,
+    0 0 12px rgba(217, 54, 54, 0.15);
+}
+
+#shuffle-btn:hover {
+  background: linear-gradient(
+    180deg,
+    #f04440 0%,
+    #b9272c 100%
+  );
+
+  border-color: #ff7770;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 3px 0 #521519,
+    0 0 18px rgba(239, 65, 60, 0.3);
+}
+
+#shuffle-btn:active {
+  background: #8f2025;
+}
+
+/* LIVEWIRE：半透明暗红换歌按钮 */
+#shuffle-btn {
+  color: rgba(255, 245, 245, 0.92);
+
+  background: linear-gradient(
+    180deg,
+    rgba(105, 28, 32, 0.72),
+    rgba(58, 18, 22, 0.78)
+  );
+
+  border: 1px solid rgba(190, 70, 70, 0.55);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 3px 0 rgba(20, 10, 12, 0.55);
+  
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#shuffle-btn:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(135, 35, 40, 0.78),
+    rgba(75, 20, 25, 0.84)
+  );
+
+  border-color: rgba(220, 95, 90, 0.7);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 3px 0 rgba(20, 10, 12, 0.55),
+    0 0 12px rgba(170, 35, 40, 0.12);
+}
+
+#shuffle-btn:active {
+  background: rgba(65, 18, 22, 0.88);
+}
+
+/* ========================================
+   LIVEWIRE：信号接入开屏动画
+   ======================================== */
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #050505;
+isolation: isolate;
+  color: #f2f0eb;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 暗场中的细微扫描线 */
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+  z-index: 2;
+}
+
+/* 红色环境光与微弱噪点质感 */
+.intro-noise {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    radial-gradient(
+      ellipse at 20% 55%,
+      rgba(174, 24, 31, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 80% 40%,
+      rgba(174, 24, 31, 0.12),
+      transparent 38%
+    );
+  animation: introAtmosphere 5s ease-in-out infinite alternate;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 3;
+  width: min(440px, 84vw);
+  text-align: center;
+}
+
+/* 顶部系统状态 */
+.intro-status {
+  margin: 0 0 32px;
+  color: #a7a2a2;
+  font-size: 10px;
+  letter-spacing: 3px;
+  animation: introTextIn 0.6s ease both;
+}
+
+.intro-light {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #e34840;
+  box-shadow: 0 0 10px rgba(227, 72, 64, 0.9);
+  animation: introBlink 0.8s steps(2, start) infinite;
+}
+
+/* LIVEWIRE 标题 */
+.intro-logo {
+  position: relative;
+  color: #f3f0ed;
+  font-size: clamp(36px, 8vw, 62px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 5px;
+  line-height: 1.2;
+  text-shadow:
+    0 0 2px #ffffff,
+    0 0 18px rgba(227, 72, 64, 0.28);
+  animation:
+    introLogoIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both,
+    introLogoFlicker 4s 1s infinite;
+}
+
+/* 红色信号声波 */
+.intro-wave {
+  display: flex;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 30px auto 24px;
+}
+
+.intro-wave i {
+  display: block;
+  width: 3px;
+  height: 8px;
+  border-radius: 2px;
+  background: #e34840;
+  box-shadow: 0 0 8px rgba(227, 72, 64, 0.3);
+  transform-origin: center;
+  animation: introWave 0.75s ease-in-out infinite alternate;
+}
+
+.intro-wave i:nth-child(3n) {
+  animation-duration: 0.52s;
+}
+
+.intro-wave i:nth-child(4n) {
+  animation-duration: 0.95s;
+}
+
+.intro-wave i:nth-child(2n) {
+  animation-delay: -0.4s;
+}
+
+/* 连接状态文字 */
+.intro-message {
+  min-height: 15px;
+  margin: 0 0 18px;
+  color: #a6a1a1;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* 进度条 */
+.intro-progress {
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  background: #282323;
+}
+
+.intro-progress-bar {
+  width: 0;
+  height: 100%;
+  background: #e34840;
+  box-shadow: 0 0 10px rgba(227, 72, 64, 0.9);
+  animation: introProgress 3s linear forwards;
+}
+
+.intro-footer {
+  margin-top: 22px;
+  color: #625c5c;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* 跳过按钮 */
+.intro-skip {
+  position: absolute;
+  z-index: 4;
+  right: 28px;
+  bottom: 26px;
+  padding: 10px 14px;
+  border: 1px solid rgba(227, 72, 64, 0.38);
+  border-radius: 4px;
+  background: rgba(20, 10, 10, 0.55);
+  color: #c8bebe;
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.intro-skip:hover {
+  color: #ffffff;
+  background: rgba(227, 72, 64, 0.18);
+  border-color: #e34840;
+}
+
+.intro-skip:focus-visible {
+  outline: 2px solid #e34840;
+  outline-offset: 4px;
+}
+
+/* 开屏退出状态：下一步由 JavaScript 触发 */
+.intro-screen.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.65s ease,
+    visibility 0s linear 0.65s;
+}
+
+/* 动画关键帧 */
+@keyframes introAtmosphere {
+  from {
+    transform: translate(-1%, -1%);
+    opacity: 0.25;
+  }
+
+  to {
+    transform: translate(1%, 1%);
+    opacity: 0.65;
+  }
+}
+
+@keyframes introTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introLogoIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes introLogoFlicker {
+  0%, 92%, 96%, 100% {
+    opacity: 1;
+  }
+
+  93% {
+    opacity: 0.72;
+  }
+
+  95% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes introBlink {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes introWave {
+  from {
+    transform: scaleY(0.35);
+    opacity: 0.55;
+  }
+
+  to {
+    transform: scaleY(3.2);
+    opacity: 1;
+  }
+}
+
+@keyframes introProgress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* 尊重系统的减少动态效果设置 */
+@media (prefers-reduced-motion: reduce) {
+  .intro-noise,
+  .intro-status,
+  .intro-logo,
+  .intro-light,
+  .intro-wave i,
+  .intro-progress-bar {
+    animation: none;
+  }
+
+  .intro-progress-bar {
+    width: 100%;
+  }
+
+  .intro-screen.is-leaving {
+    transition: none;
+  }
+}
+
+/* 手机端微调 */
+@media (max-width: 600px) {
+  .intro-status {
+    margin-bottom: 26px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .intro-wave {
+    margin-top: 24px;
+  }
+
+  .intro-skip {
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+/* LIVEWIRE：强制开屏覆盖整个页面 */
+body > #intro-screen {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+
+  background: #050505 !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 开屏退出时允许淡出 */
+body > #intro-screen.is-leaving {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* LIVEWIRE：开屏瞬间的红色信号故障 */
+.intro-logo {
+  animation:
+    introLogoIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both,
+    introGlitchHit 3.3s linear both;
+}
+
+/* 标题出现后短暂发生一次信号错位 */
+@keyframes introGlitchHit {
+  0%, 23%, 28%, 100% {
+    transform: translateX(0) skewX(0);
+    text-shadow:
+      0 0 2px #ffffff,
+      0 0 18px rgba(227, 72, 64, 0.28);
+    filter: none;
+    opacity: 1;
+  }
+
+  24% {
+    transform: translateX(-3px) skewX(-2deg);
+    text-shadow:
+      4px 0 rgba(255, 35, 45, 0.95),
+      -3px 0 rgba(255, 255, 255, 0.65);
+    filter: brightness(1.7);
+  }
+
+  25% {
+    transform: translateX(3px) skewX(2deg);
+    text-shadow:
+      -4px 0 rgba(255, 35, 45, 0.95),
+      3px 0 rgba(255, 255, 255, 0.65);
+    filter: brightness(1.3);
+  }
+
+  26% {
+    transform: translateX(-1px);
+    text-shadow:
+      2px 0 rgba(255, 35, 45, 0.8),
+      -1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  27% {
+    transform: translateX(0);
+    filter: none;
+  }
+}
+
+/* 故障发生时，声波也短暂增强 */
+.intro-wave {
+  animation: introWaveGlitch 3.3s linear both;
+}
+
+@keyframes introWaveGlitch {
+  0%, 23%, 28%, 100% {
+    filter: none;
+    opacity: 1;
+  }
+
+  24% {
+    filter: brightness(2.2);
+    opacity: 0.7;
+  }
+
+  25% {
+    filter: brightness(1.5);
+    opacity: 1;
+  }
+
+  26% {
+    filter: brightness(2);
+  }
+}
+
+/* 尊重减少动态效果设置 */
+@media (prefers-reduced-motion: reduce) {
+  .intro-logo,
+  .intro-wave {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   LIVEWIRE // HIGH VOLTAGE
+   高压电流 · 霓虹爆闪 · 激光扫描
+   ========================================== */
+
+/* 全屏能量脉冲：红光瞬间贯穿画面 */
+.intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(255, 20, 35, 0.04) 46%,
+      rgba(255, 35, 45, 0.8) 49.5%,
+      rgba(255, 220, 220, 0.95) 50%,
+      rgba(255, 30, 45, 0.8) 50.5%,
+      rgba(255, 20, 35, 0.04) 54%,
+      transparent 65%
+    );
+  mix-blend-mode: screen;
+  animation: highVoltageFlash 3.3s linear both;
+}
+
+/* 标题：从暗红到高亮霓虹 */
+.intro-logo {
+  color: #fff8f7;
+  text-shadow:
+    0 0 2px #ffffff,
+    0 0 8px rgba(255, 75, 75, 0.95),
+    0 0 22px rgba(255, 20, 35, 0.8),
+    0 0 55px rgba(220, 20, 35, 0.48);
+  animation:
+    introLogoIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both,
+    highVoltageLogo 3.3s linear both;
+}
+
+/* 标题下方的激光扫描线 */
+.intro-content {
+  position: relative;
+}
+
+.intro-content::after {
+  content: "";
+  position: absolute;
+  top: 27%;
+  left: -12%;
+  width: 124%;
+  height: 2px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff252f 15%,
+    #fff 50%,
+    #ff252f 85%,
+    transparent
+  );
+  box-shadow:
+    0 0 6px #ff252f,
+    0 0 18px #ff252f,
+    0 0 38px rgba(255, 25, 40, 0.8);
+  animation: introLaserSweep 3.3s ease-out both;
+}
+
+/* 声波增强：红色霓虹与白色电流 */
+.intro-wave {
+  filter:
+    drop-shadow(0 0 5px rgba(255, 30, 40, 0.85))
+    drop-shadow(0 0 15px rgba(255, 20, 35, 0.5));
+  animation: introWaveGlitch 3.3s linear both;
+}
+
+.intro-wave i:nth-child(5n) {
+  background: #fff2f0;
+  box-shadow:
+    0 0 5px #fff,
+    0 0 14px #ff303b;
+}
+
+/* 能量爆闪：短促而强烈，不持续刺眼 */
+@keyframes highVoltageFlash {
+  0%, 22%, 28%, 100% {
+    opacity: 0;
+  }
+
+  23% {
+    opacity: 0.2;
+  }
+
+  24% {
+    opacity: 0.95;
+  }
+
+  24.5% {
+    opacity: 0.12;
+  }
+
+  25% {
+    opacity: 0.7;
+  }
+
+  26% {
+    opacity: 0;
+  }
+}
+
+/* 霓虹标题电压跃升 */
+@keyframes highVoltageLogo {
+  0%, 20%, 100% {
+    transform: translateX(0) skewX(-5deg);
+    filter: brightness(1);
+  }
+
+  23% {
+    transform: translateX(-2px) skewX(-5deg);
+    filter: brightness(1.5);
+    text-shadow:
+      -5px 0 #ff2636,
+      5px 0 rgba(255, 255, 255, 0.85),
+      0 0 28px #ff2636,
+      0 0 60px rgba(255, 20, 35, 0.8);
+  }
+
+  24% {
+    transform: translateX(3px) skewX(-8deg);
+    filter: brightness(2.2);
+    text-shadow:
+      -7px 0 #ff2636,
+      7px 0 #ffffff,
+      0 0 35px #ff2636,
+      0 0 80px rgba(255, 20, 35, 0.95);
+  }
+
+  25% {
+    transform: translateX(-1px) skewX(-3deg);
+    filter: brightness(1.7);
+  }
+
+  27% {
+    transform: translateX(0) skewX(-5deg);
+    filter: brightness(1);
+  }
+}
+
+/* 激光快速扫过标题区域 */
+@keyframes introLaserSweep {
+  0%, 12%, 100% {
+    opacity: 0;
+    transform: translateX(-35%) scaleX(0.25);
+  }
+
+  18% {
+    opacity: 0.9;
+    transform: translateX(0) scaleX(1);
+  }
+
+  24% {
+    opacity: 0;
+    transform: translateX(35%) scaleX(0.5);
+  }
+}
+
+/* 尊重减少动态效果设置 */
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen::after,
+  .intro-logo,
+  .intro-content::after,
+  .intro-wave {
+    animation: none !important;
+  }
+
+  .intro-screen::after,
+  .intro-content::after {
+    display: none;
+  }
+}
