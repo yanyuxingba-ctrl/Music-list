@@ -981,15 +981,15 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  z-index: -2;
   pointer-events: none;
+  z-index: -1;
 }
 
-/* 视频上的暗色遮罩，确保文字清晰 */
+/* 页面背景透明，让视频能够透出来 */
 body {
   position: relative;
-  background: #111215;
+  background: transparent;
+  color: var(--white);
 }
 
 body::after {
@@ -1021,12 +1021,6 @@ body > *:not(.stage-video) {
   }
 }
 
-/* 减少动态效果时隐藏视频 */
-@media (prefers-reduced-motion: reduce) {
-  .stage-video {
-    display: none;
-  }
-}
 
 /* 修复：首页背景遮挡动态舞台视频 */
 .hero {
