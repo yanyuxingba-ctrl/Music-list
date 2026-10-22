@@ -198,3 +198,55 @@ if (introScreen) {
 if (introSkipButton) {
   introSkipButton.addEventListener("click", closeIntro);
 }
+// LIVEWIRE 背景视频兼容性处理
+(() => {
+  const video = document.getElementById("stageVideo");
+
+  if (!video) {
+    console.warn("[LIVEWIRE] 没有找到背景视频元素");
+    return;
+  }
+
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+
+  const tryPlay = () => {
+    const result = video.play();
+
+    if (result && typeof result.catch === "function") {
+      result.catch((error) => {
+        console.warn(
+          "[LIVEWIRE] 背景视频播放失败：",
+          error.name,
+          error.message
+        );
+      });
+    }
+  };
+
+  video.addEventListener("canplay", tryPlay, { once: true });
+
+  video.addEventListener("error", () => {
+    console.error(
+      "[LIVEWIRE] 视频加载失败",
+      video.error ? video.error.code : "未知错误",
+      video.currentSrc
+    );
+  });
+
+  tryPlay();
+
+  // 用户首次点击或触摸页面时，再尝试启动播放
+  const retryOnInteraction = () => {
+    if (video.paused) {
+      tryPlay();
+    }
+  };
+
+  document.addEventListener("click", retryOnInteraction, { once: true });
+  document.addEventListener("touchstart", retryOnInteraction, {
+    once: true,
+    passive: true
+  });
+})();
