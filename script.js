@@ -301,13 +301,24 @@ if (introSkipButton) {
     }
   }, 1000);
 
-  // 用户首次点击或触摸时再次尝试
-  const retryOnInteraction = () => {
+  // 首次触摸/点击时，让背景视频淡入，营造“触摸后舞台亮起”的效果
+  let hasRevealed = false;
+  const revealVideo = () => {
+    if (!hasRevealed) {
+      hasRevealed = true;
+      video.classList.add("is-revealed");
+    }
     tryPlay();
   };
 
-  document.addEventListener("click", retryOnInteraction);
-  document.addEventListener("touchstart", retryOnInteraction, {
+  document.addEventListener("pointerdown", revealVideo, {
+    once: true,
     passive: true
   });
+  // 兼容部分较旧的移动浏览器
+  document.addEventListener("touchstart", revealVideo, {
+    once: true,
+    passive: true
+  });
+  document.addEventListener("click", revealVideo, { once: true });
 })();
