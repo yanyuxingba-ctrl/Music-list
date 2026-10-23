@@ -241,8 +241,15 @@ if (introSkipButton) {
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
+  video.setAttribute("muted", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+
+  let retryTimer = null;
 
   const tryPlay = () => {
+    if (!video.paused && !video.ended) return;
+
     const result = video.play();
 
     if (result && typeof result.catch === "function") {
@@ -256,7 +263,8 @@ if (introSkipButton) {
     }
   };
 
-  video.addEventListener("canplay", tryPlay, { once: true });
+  // 视频加载完成后尝试播放
+  video.addEventListener("canplay", tryPlay);
 
   video.addEventListener("error", () => {
     console.error(
@@ -266,18 +274,40 @@ if (introSkipButton) {
     );
   });
 
+  // 页面初次加载时尝试播放
   tryPlay();
 
-  // 用户首次点击或触摸页面时，再尝试启动播放
-  const retryOnInteraction = () => {
-    if (video.paused) {
-      tryPlay();
+  // 页面恢复显示时再次尝试
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) tryPlay();
+  });
+
+  window.addEventListener("pageshow", tryPlay);
+
+  // 页面加载后短暂重试，避免视频初始化时机不一致
+  let attempts = 0;
+  retryTimer = window.setInterval(() => {
+    attempts++;
+
+    if (!video.paused && !video.ended) {
+      clearInterval(retryTimer);
+      return;
     }
+
+    tryPlay();
+
+    if (attempts >= 8) {
+      clearInterval(retryTimer);
+    }
+  }, 1000);
+
+  // 用户首次点击或触摸时再次尝试
+  const retryOnInteraction = () => {
+    tryPlay();
   };
 
-  document.addEventListener("click", retryOnInteraction, { once: true });
+  document.addEventListener("click", retryOnInteraction);
   document.addEventListener("touchstart", retryOnInteraction, {
-    once: true,
     passive: true
   });
 })();
