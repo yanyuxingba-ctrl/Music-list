@@ -974,7 +974,22 @@ footer {
   height: 12px;
 }
 
-/* LIVEWIRE：动态舞台视频背景 */
+```css
+/* LIVEWIRE：动态舞台视频背景修复 */
+html {
+  min-height: 100%;
+  background: #111214;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: transparent;
+  color: var(--white);
+}
+
+/* 视频层：固定在页面最底层，但不掉到浏览器页面背景后面 */
 .stage-video {
   position: fixed;
   inset: 0;
@@ -982,37 +997,44 @@ footer {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
-/* 页面背景透明，让视频能够透出来 */
-body {
-  position: relative;
-  background: transparent;
-  color: var(--white);
-}
-
+/* 暗色遮罩：位于视频上方 */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(12, 13, 16, 0.55) 0%,
-      rgba(12, 13, 16, 0.35) 45%,
-      rgba(12, 13, 16, 0.78) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(12, 13, 16, 0.55) 0%,
+    rgba(12, 13, 16, 0.35) 45%,
+    rgba(12, 13, 16, 0.78) 100%
+  );
 }
 
-/* 页面内容保持在背景上方 */
+/* 页面内容位于视频与遮罩上方 */
 body > *:not(.stage-video) {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
+
+/* 开屏动画始终覆盖整个页面 */
+body > #intro-screen {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+}
+
+/* 手机端调整遮罩深度 */
+@media (max-width: 768px) {
+  body::after {
+    background: rgba(12, 13, 16, 0.58);
+  }
+}
+```
 
 /* 手机端避免视频背景过亮 */
 @media (max-width: 768px) {
