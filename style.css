@@ -1748,3 +1748,28 @@ body > #intro-screen.is-leaving {
     display: none;
   }
 }
+/* LIVEWIRE：修复移动端背景视频渲染 */
+#stageVideo.stage-video {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* 避免视频被意外隐藏 */
+#stageVideo {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
