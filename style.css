@@ -1767,9 +1767,20 @@ body > #intro-screen.is-leaving {
   pointer-events: none;
 }
 
-/* 避免视频被意外隐藏 */
+/* 初始隐藏视频层，避免手机浏览器未渲染时出现灰屏；首次交互后亮起 */
 #stageVideo {
   display: block;
   visibility: visible;
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+
+#stageVideo.is-revealed {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #stageVideo {
+    transition: none;
+  }
 }
