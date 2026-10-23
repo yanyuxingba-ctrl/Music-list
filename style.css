@@ -974,7 +974,6 @@ footer {
   height: 12px;
 }
 
-```css
 /* LIVEWIRE：动态舞台视频背景修复 */
 html {
   min-height: 100%;
@@ -1034,7 +1033,6 @@ body > #intro-screen {
     background: rgba(12, 13, 16, 0.58);
   }
 }
-```
 
 /* 手机端避免视频背景过亮 */
 @media (max-width: 768px) {
