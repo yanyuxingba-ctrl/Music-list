@@ -183,6 +183,37 @@ function closeIntro() {
 
   introScreen.classList.add("is-leaving");
 
+  // 开屏结束时，重新尝试启动背景视频
+  const video = document.getElementById("stageVideo");
+
+  if (video) {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    const startVideo = () => {
+      const result = video.play();
+
+      if (result && typeof result.catch === "function") {
+        result.catch((error) => {
+          console.warn(
+            "[LIVEWIRE] 开屏结束后背景视频播放失败：",
+            error.name,
+            error.message
+          );
+        });
+      }
+    };
+
+    // 立即尝试一次
+    startVideo();
+
+    // 如果视频尚未准备好，等可以播放时再尝试
+    if (video.readyState < 3) {
+      video.addEventListener("canplay", startVideo, { once: true });
+    }
+  }
+
   // 淡出结束后彻底移除开屏，避免遮挡主页
   window.setTimeout(() => {
     introScreen.remove();
