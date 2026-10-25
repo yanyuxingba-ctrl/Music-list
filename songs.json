@@ -480,13 +480,17 @@
     "title": "没有理想的人不伤心",
     "artist": "新裤子",
     "category": "摇滚！！",
-    "tags": []
+    "tags":  [
+      "朋克"
+    ]
   },
   {
     "title": "你要跳舞吗",
     "artist": "新裤子",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "霓虹甜心",
@@ -863,9 +867,19 @@
   },
   {
     "title": "荒废的一天",
-    "artist": "",
+    "artist": "新裤子",
     "category": "摇滚！！",
-    "tags": []
+    "tags":  [
+      "朋克"
+    ]
+  },
+   {
+    "title": "别再问什么是迪斯科",
+    "artist": "新裤子",
+    "category": "摇滚！！",
+    "tags":  [
+      "朋克"
+    ]
   },
   {
     "title": "控制",
@@ -881,7 +895,7 @@
   },
   {
     "title": "迷途未返",
-    "artist": "",
+    "artist": "葡萄不愤怒",
     "category": "摇滚！！",
     "tags": []
   },
@@ -945,7 +959,9 @@
     "title": "悲伤朋克",
     "artist": "",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "探险家",
