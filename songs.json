@@ -459,13 +459,61 @@
     "tags": []
   },
   {
+    "title": "在雨中",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "飞的更高",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "信仰在空中飘扬",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "春天里",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "光明",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "北京北京",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
     "title": "勇敢的心",
     "artist": "汪峰",
     "category": "摇滚！！",
     "tags": []
   },
   {
+    "title": "像梦一样自由",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
     "title": "盛开",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": " 怒放的生命",
     "artist": "汪峰",
     "category": "摇滚！！",
     "tags": []
@@ -495,6 +543,12 @@
   {
     "title": "霓虹甜心",
     "artist": "马赛克乐队",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "梦",
+    "artist": "面孔乐队",
     "category": "摇滚！！",
     "tags": []
   },
@@ -598,7 +652,9 @@
     "title": "蚂蚁",
     "artist": "散人",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "圈",
@@ -614,6 +670,12 @@
   },
   {
     "title": "烂泥",
+    "artist": "草东没有派对",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "情歌",
     "artist": "草东没有派对",
     "category": "摇滚！！",
     "tags": []
@@ -819,7 +881,7 @@
   },
   {
     "title": "天才艺术家",
-    "artist": "",
+    "artist": "犬儒乐队",
     "category": "摇滚！！",
     "tags": []
   },
@@ -841,7 +903,7 @@
   },
   {
     "title": "烂在鲜花阳光地方",
-    "artist": "",
+    "artist": "快乐老家",
     "category": "摇滚！！",
     "tags":  [
       "朋克"
@@ -889,21 +951,25 @@
   },
   {
     "title": "鬼",
-    "artist": "",
+    "artist": "草东",
     "category": "摇滚！！",
     "tags": []
   },
   {
     "title": "我爱吃烤鸭",
-    "artist": "",
+    "artist": "熊猫眼",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
-    "title": "再见林尼尔",
-    "artist": "",
+    "title": "再见琳尼尔",
+    "artist": "新学校合唱团",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "酒精计划",
@@ -915,13 +981,13 @@
   },
   {
     "title": "搁浅的人",
-    "artist": "",
+    "artist": "康士坦的变化球",
     "category": "摇滚！！",
     "tags": []
   },
   {
     "title": "病",
-    "artist": "",
+    "artist": "犬儒乐队",
     "category": "摇滚！！",
     "tags": []
   },
@@ -1008,6 +1074,24 @@
     "tags": []
   },
   {
+    "title": "我真得需要吗",
+    "artist": "汪峰",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "我真得需要",
+    "artist": "鲍家街43号",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
+    "title": "小鸟",
+    "artist": "鲍家街43号",
+    "category": "摇滚！！",
+    "tags": []
+  },
+  {
     "title": "有你的夏天",
     "artist": "新裤子乐队",
     "category": "摇滚！！",
@@ -1055,7 +1139,7 @@
   },
   {
     "title": "美好的事可不可以发生在我身上",
-    "artist": "",
+    "artist": "康士坦的变化球",
     "category": "摇滚！！",
     "tags": []
   },
