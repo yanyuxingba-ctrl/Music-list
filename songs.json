@@ -547,10 +547,52 @@
     "tags": []
   },
   {
+    "title": "嘿，姑娘",
+    "artist": "反光镜",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
     "title": "静止",
     "artist": "花儿乐队",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
+    "title": "我的果汁分你一半",
+    "artist": "花儿乐队",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
+    "title": "万物盛开法则",
+    "artist": "花儿乐队",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
+    "title": "葫芦娃",
+    "artist": "花儿乐队",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
+    "title": "化蝶飞",
+    "artist": "花儿乐队",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "蚂蚁",
@@ -783,33 +825,67 @@
   },
   {
     "title": "我被困在理想世界",
-    "artist": "",
+    "artist": "快乐老家",
     "category": "摇滚！！",
-    "tags": []
+    "tags":  [
+      "朋克"
+    ]
   },
   {
     "title": "恶人先告状",
-    "artist": "",
+    "artist": "快乐老家",
     "category": "摇滚！！",
-    "tags": []
+    "tags":  [
+      "朋克"
+    ]
   },
   {
     "title": "烂在鲜花阳光地方",
     "artist": "",
     "category": "摇滚！！",
-    "tags": []
+    "tags":  [
+      "朋克"
+    ]
   },
   {
     "title": "不自知",
-    "artist": "",
+    "artist": "快乐老家",
     "category": "摇滚！！",
-    "tags": []
+    "tags":  [
+      "朋克"
+    ]
+  },
+  {
+    "title": "看就是他",
+    "artist": "快乐老家",
+    "category": "摇滚！！",
+    "tags":  [
+      "朋克"
+    ]
+  },
+  {
+    "title": "你爱我吗",
+    "artist": "快乐老家",
+    "category": "摇滚！！",
+    "tags":  [
+      "朋克"
+    ]
   },
   {
     "title": "左右为难",
-    "artist": "",
+    "artist": "伏嵩",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
+    "title": "像草一样",
+    "artist": "伏嵩",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "鬼",
@@ -831,9 +907,11 @@
   },
   {
     "title": "酒精计划",
-    "artist": "",
+    "artist": "葡萄不愤怒",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "搁浅的人",
@@ -855,15 +933,19 @@
   },
   {
     "title": "小红帽",
-    "artist": "",
+    "artist": "葡萄不愤怒",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "小宇",
-    "artist": "",
+    "artist": "葡萄不愤怒",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "荒废的一天",
@@ -883,9 +965,19 @@
   },
   {
     "title": "控制",
-    "artist": "",
+    "artist": "法兹",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
+  },
+    {
+    "title": "我们能不能不分手",
+    "artist": "花儿乐队",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "出现又离开",
@@ -897,7 +989,17 @@
     "title": "迷途未返",
     "artist": "葡萄不愤怒",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
+  },
+  {
+    "title": "没有人比我更喜欢你！",
+    "artist": "葡萄不愤怒",
+    "category": "摇滚！！",
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "如翁",
@@ -905,7 +1007,7 @@
     "category": "摇滚！！",
     "tags": []
   },
-   {
+  {
     "title": "有你的夏天",
     "artist": "新裤子乐队",
     "category": "摇滚！！",
@@ -913,7 +1015,7 @@
       "新学的！"
     ]
   },
-   {
+  {
     "title": "皮奥莱维奇",
     "artist": "伏嵩乐队",
     "category": "摇滚！！",
@@ -945,9 +1047,11 @@
   },
   {
     "title": "8+8=8",
-    "artist": "",
+    "artist": "岛屿心情",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "美好的事可不可以发生在我身上",
@@ -977,9 +1081,11 @@
   },
   {
     "title": "都选C",
-    "artist": "",
+    "artist": "缝纫机",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "去特喵的",
@@ -1009,7 +1115,9 @@
     "title": "闹海",
     "artist": "哪吒",
     "category": "摇滚！！",
-    "tags": []
+    "tags": [
+      "朋克"
+    ]
   },
   {
     "title": "放开那个女孩",
